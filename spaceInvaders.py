@@ -5,8 +5,11 @@ from tkinter import *
 key_dictionary = {  'Left': (True,-20,-20),
                     'Right': (True,20,-20),
                     'Up': (True,0,-20),
-                    'space': (True,0,-20),
-                                            }
+                    'a': (True,-20,-20),
+                    'd': (True,20,-20),
+                    'w': (True,0,-20),
+                    'space': (True,0,-20)
+                }
 
 # Creating data needed for later
 key_down = False
@@ -49,7 +52,7 @@ def on_KeyPress(event):
     key_down,Player_X_Vel,Player_Y_Vel = key_dictionary[event.keysym]
 
     # If the key pressed was a "Fire" key, update the "Firing" variable to True
-    if ((event.keysym == "Up")or(event.keysym == "space")):
+    if ((event.keysym == "Up") or (event.keysym == "space") or (event.keysym == "w")):
         Firing = True
     # ELSE (any other key pressed)
     else:
